@@ -1,6 +1,6 @@
 {
   "name": "lexicon-guard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A deterministic gate for words you have already decided not to use.",
   "license": "MIT",
   "bin": {

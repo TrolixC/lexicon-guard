@@ -21,7 +21,7 @@
       "severity": "blocker",
       "scope": "all",
       "pattern": "\\$\\s?49\\s*(/|per)\\s*(mo|month|seat)",
-      "message": "Retired list price. It lives in four old pages; a customer who quotes it back gets a discount nobody planned.",
+      "message": "Retired list price. It still survives on old pages; a customer who quotes it expects it honored.",
       "fix": "Link to the pricing page. Do not restate a figure in prose."
     },
     {

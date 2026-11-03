@@ -2,7 +2,7 @@
 
 A deterministic gate for words you have already decided not to use.
 
-Teams make decisions about language all the time: a product gets renamed, a price is retired, a feature is "on the roadmap" and not "available", a negotiating number must never reach a customer. The decision gets made once. The old words keep coming back: someone copies a paragraph from an old deck, a figure lives in four files and only three get fixed, an internal note gets pasted into a customer email.
+Teams make decisions about language all the time: a product gets renamed, a price is retired, a feature is "on the roadmap" and not "available", a negotiating number must never reach a customer. The decision gets made once. The old words keep coming back: someone copies a paragraph from an old deck, a retired price gets corrected in most places and survives in one, an internal note gets pasted into a customer email.
 
 Those recurrences are not a judgment problem. They are a grep problem. lexicon-guard greps a file or a folder against a lexicon of rules, each rule citing the decision it enforces, and exits non-zero when a blocker is found. It runs in milliseconds, has no dependencies, makes no network calls and calls no model.
 
@@ -36,7 +36,7 @@ lexicon-guard · Acme docs (example) · lexicon 2026-10-21 · authority DECISION
     examples/docs/pricing.md  (1)  line 3
 
 [ADR-011-old-price]  1 hit  · enforces ADR-011
-  Retired list price. It lives in four old pages; a customer who quotes it back gets a discount nobody planned.
+  Retired list price. It still survives on old pages; a customer who quotes it expects it honored.
   FIX: Link to the pricing page. Do not restate a figure in prose.
     examples/docs/pricing.md  (1)  line 3
 
@@ -149,7 +149,7 @@ Top-level `internalPaths` is a list of regexes matched against each file's path 
 # .pre-commit-config.yaml
 repos:
   - repo: https://github.com/TrolixC/lexicon-guard
-    rev: v1.0.0
+    rev: v1.0.1
     hooks:
       - id: lexicon-guard
         args: [--lexicon, lexicon.json]

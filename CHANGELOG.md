@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. This project follows [Semantic Versioning](https://semver.org).
 
+## [1.0.1] - 2026-11-03
+
+### Changed
+
+- README: the opening example of a recurring defect is now generic ("a retired price gets corrected in most places and survives in one").
+- `lexicon.example.json`: the ADR-011 message is now generic ("Retired list price. It still survives on old pages; a customer who quotes it expects it honored."). The README sample output is updated to match.
+- README pre-commit snippet pins `rev: v1.0.1`.
+- `--version` reports 1.0.1.
+
 ## [1.0.0] - 2026-11-03
 
 First public release.
