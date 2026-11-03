@@ -1,0 +1,8 @@
+- id: lexicon-guard
+  name: lexicon-guard
+  description: Block words you have already decided not to use, against a lexicon of rules.
+  entry: lexicon-guard
+  language: node
+  files: \.(md|txt|html|json|ya?ml|css|[cm]?[jt]sx?|[cm]ts)$
+  pass_filenames: true
+  require_serial: true

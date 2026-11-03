@@ -1,0 +1,75 @@
+{
+  "project": "Acme docs (example)",
+  "updated": "2026-10-21",
+  "authority": "DECISIONS.md",
+  "note": "Example lexicon for a fictional company. Every rule cites the decision it enforces. If a rule is wrong, fix the decision record first, then this file. Never the reverse.",
+  "internalPaths": ["(^|/)internal/", "(^|/)drafts/", "\\.internal\\.md$"],
+  "rules": [
+    {
+      "id": "ADR-004-product-name",
+      "decision": "ADR-004",
+      "severity": "blocker",
+      "scope": "all",
+      "pattern": "\\bacme\\s+pulse\\b",
+      "message": "The product was renamed. The old name still ranks in search, and buyers comparing quotes think they are two products.",
+      "fix": "\"Acme Signals\".",
+      "quotable": true
+    },
+    {
+      "id": "ADR-011-old-price",
+      "decision": "ADR-011",
+      "severity": "blocker",
+      "scope": "all",
+      "pattern": "\\$\\s?49\\s*(/|per)\\s*(mo|month|seat)",
+      "message": "Retired list price. It lives in four old pages; a customer who quotes it back gets a discount nobody planned.",
+      "fix": "Link to the pricing page. Do not restate a figure in prose."
+    },
+    {
+      "id": "ADR-007-negotiation",
+      "decision": "ADR-007",
+      "severity": "blocker",
+      "scope": "client",
+      "pattern": "discount floor|walk[\\s-]?away price|do not share externally",
+      "message": "Negotiation logic on a customer-facing page.",
+      "fix": "Move it under internal/. Not quotable on purpose: a leak inside quotation marks is still a leak."
+    },
+    {
+      "id": "ADR-015-sso",
+      "decision": "ADR-015",
+      "severity": "blocker",
+      "scope": "client",
+      "pattern": "\\bSSO\\b[^.\\n]{0,40}\\b(available|included|supported|ships)\\b|\\b(available|included|supported)\\b[^.\\n]{0,40}\\bSSO\\b",
+      "message": "SSO is on the roadmap, not in the product. A security reviewer will treat this sentence as a commitment.",
+      "fix": "\"SSO is on the roadmap.\" No date."
+    },
+    {
+      "id": "ADR-002-guarantee",
+      "decision": "ADR-002",
+      "severity": "blocker",
+      "scope": "client",
+      "pattern": "\\bguarantee[sd]?\\b|100\\s?%\\s+uptime",
+      "message": "Contract language. Only the SLA makes commitments.",
+      "fix": "\"designed for\" or \"targets\", and link the SLA."
+    },
+    {
+      "id": "ADR-009-realtime",
+      "decision": "ADR-009",
+      "severity": "warn",
+      "scope": "all",
+      "pattern": "\\breal[\\s-]?time\\b(?![\\s-]+\\(?(within|under|<)\\s*\\d)",
+      "message": "Ambiguous. Engineering means under five seconds; buyers hear instant. Warn, not blocker: some uses are fine, so read the sentence.",
+      "fix": "State the bound: \"real-time (within 5 seconds)\".",
+      "quotable": true
+    },
+    {
+      "id": "ADR-012-terminology",
+      "decision": "ADR-012",
+      "severity": "warn",
+      "scope": "all",
+      "pattern": "\\b(white|black)[\\s-]?list(s|ed|ing)?\\b",
+      "message": "Retired terminology.",
+      "fix": "\"allowlist\" / \"blocklist\".",
+      "quotable": true
+    }
+  ]
+}
